@@ -23,13 +23,6 @@ func plusMinus(arr: [Int]) -> Void {
     print(String(format: "%.6f", (numberOfZero / Double(arr.count))))
 }
 
-extension Double {
-    func digits(num: Int) -> Double {
-        var weight = pow(10, Double(num))
-        return Double(Int(self * weight)) / weight
-    }
-}
-
 class UserManagerTests: XCTestCase {
     override func setUp() {
         super.setUp()
