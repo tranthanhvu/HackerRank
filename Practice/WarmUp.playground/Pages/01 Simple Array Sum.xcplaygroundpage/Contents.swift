@@ -13,7 +13,7 @@ class UserManagerTests: XCTestCase {
     }
     
     func test1() {
-        XCTAssertTrue(simpleArraySum(a: [1, 2, 3, 4, 10, 11]) == 31)
+        XCTAssertTrue(simpleArraySum(ar: [1, 2, 3, 4, 10, 11]) == 31)
     }
 }
 
