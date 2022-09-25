@@ -7,5 +7,7 @@
         <page name='04 Diagonal Difference'/>
         <page name='05 Plus Minus'/>
         <page name='06 Staircase'/>
+        <page name='07 Mini-Max Sum'/>
+        <page name='08 Birthday Cake Candles'/>
     </pages>
 </playground>
