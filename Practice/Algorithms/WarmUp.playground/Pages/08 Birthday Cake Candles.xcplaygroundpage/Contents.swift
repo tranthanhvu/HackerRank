@@ -3,8 +3,24 @@ import XCTest
 
 // Ref: https://www.hackerrank.com/challenges/birthday-cake-candles/problem
 func birthdayCakeCandles(candles: [Int]) -> Int {
-    // Write your code here
-
+    if candles.isEmpty { return 0 }
+    
+    var largestNumber = candles.first!
+    var countNumbers: [Int: Int] = [:]
+    
+    for n in candles {
+        if countNumbers[n] != nil {
+            countNumbers[n]! += 1
+        } else {
+            countNumbers[n] = 1
+        }
+        
+        if largestNumber < n {
+            largestNumber = n
+        }
+    }
+    
+    return countNumbers[largestNumber]!
 }
 
 
@@ -14,7 +30,7 @@ class UserManagerTests: XCTestCase {
     }
     
     func test1() {
-        birthdayCakeCandles(candles: [1, 3, 5, 7, 9])
+        XCTAssertTrue(birthdayCakeCandles(candles: [3, 2, 1, 3]) == 2)
     }
 }
 
