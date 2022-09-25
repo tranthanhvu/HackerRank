@@ -10,9 +10,7 @@ I tried to make a habit that is to solve the practices in Hackrank every day. Th
     <th><p align="center">Regex</p></th>
   </tr>
   <tr>
-  https://github.com/tranthanhvu/HackerRank/tree/master/Practice/Algorithms/Warmup
-  https://github.com/tranthanhvu/HackerRank/tree/master/Practice/Algorithms/Warmup
-    <td><a align="center" href="../../tree/master/Practice/Algorithms/Warmup">Warm Up</a> (3/10)</td>
+    <td><a align="center" href="../../tree/master/Practice/Algorithms">Warm Up</a> (10/10)</td>
     <td>Arrays (0/6)</td>
     <td>Fundamentals (0/31)</td>
     <td>Introduction (0/6)</td>
