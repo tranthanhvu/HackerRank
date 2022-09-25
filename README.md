@@ -16,7 +16,7 @@ I tried to make a habit that is to solve the practices in Hackrank every day. Th
     <td>Introduction (0/6)</td>
   </tr>
   <tr>
-    <td><a align="center" href="../../tree/master/Practice/Algorithms">Implementation</a> (1/64)</td>
+    <td><a align="center" href="../../tree/master/Practice/Algorithms">Implementation</a> (2/64)</td>
     <td>Linked Lists (0/45)</td>
     <td>Number Theory (0/73)</td>
     <td>Character Classes (0/3)</td>
