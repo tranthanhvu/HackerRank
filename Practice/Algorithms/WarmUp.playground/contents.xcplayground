@@ -9,5 +9,6 @@
         <page name='06 Staircase'/>
         <page name='07 Mini-Max Sum'/>
         <page name='08 Birthday Cake Candles'/>
+        <page name='09 Time Conversion'/>
     </pages>
 </playground>
