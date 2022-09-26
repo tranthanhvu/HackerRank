@@ -3,5 +3,6 @@
     <pages>
         <page name='Dynamic array'/>
         <page name='Left Rotation'/>
+        <page name='Sparse Arrays'/>
     </pages>
 </playground>
