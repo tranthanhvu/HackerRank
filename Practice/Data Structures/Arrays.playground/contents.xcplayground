@@ -4,5 +4,6 @@
         <page name='Dynamic array'/>
         <page name='Left Rotation'/>
         <page name='Sparse Arrays'/>
+        <page name='Array Manipulation'/>
     </pages>
 </playground>
