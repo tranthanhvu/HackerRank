@@ -5,5 +5,6 @@
         <page name='Left Rotation'/>
         <page name='Sparse Arrays'/>
         <page name='Array Manipulation'/>
+        <page name='2D Array - DS'/>
     </pages>
 </playground>
