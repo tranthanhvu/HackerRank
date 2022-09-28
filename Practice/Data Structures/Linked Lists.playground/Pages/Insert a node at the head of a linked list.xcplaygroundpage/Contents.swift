@@ -31,20 +31,16 @@ final class SinglyLinkedList {
     }
 }
 
-/// Ref: https://www.hackerrank.com/challenges/insert-a-node-at-the-tail-of-a-linked-list/problem
-func insertNodeAtTail(head: SinglyLinkedListNode?, data: Int) -> SinglyLinkedListNode {
+/// Ref: https://www.hackerrank.com/challenges/insert-a-node-at-the-head-of-a-linked-list/problem
+func insertNodeAtHead(head: SinglyLinkedListNode?, data: Int) -> SinglyLinkedListNode {
     if head == nil {
         return SinglyLinkedListNode(nodeData: data)
     }
     
-    var lastNode = head!
-    while lastNode.next != nil {
-        lastNode = lastNode.next!
-    }
-    
-    lastNode.next = SinglyLinkedListNode(nodeData: data)
-    
-    return head!
+    let newHead = SinglyLinkedListNode(nodeData: data)
+    newHead.next = head
+
+    return newHead
 }
 
 
@@ -54,13 +50,12 @@ class UserManagerTests: XCTestCase {
     }
     
     func test1() {
-        var node = insertNodeAtTail(head: nil, data: 141)
-        insertNodeAtTail(head: node, data: 302)
-        insertNodeAtTail(head: node, data: 164)
-        insertNodeAtTail(head: node, data: 530)
-        insertNodeAtTail(head: node, data: 474)
+        var head: SinglyLinkedListNode?
+        for num in [383, 484, 392, 975, 321] {
+            head = insertNodeAtHead(head: head, data: num)
+        }
         
-        XCTAssertTrue(node.next?.next?.next?.next?.data == 474)
+        XCTAssertTrue(head!.data == 321)
     }
 }
 

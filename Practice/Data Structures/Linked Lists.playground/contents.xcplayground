@@ -3,5 +3,6 @@
     <pages>
         <page name='Print the Elements of a Linked List'/>
         <page name='Insert a Node at the Tail of a Linked List'/>
+        <page name='Insert a node at the head of a linked list'/>
     </pages>
 </playground>
