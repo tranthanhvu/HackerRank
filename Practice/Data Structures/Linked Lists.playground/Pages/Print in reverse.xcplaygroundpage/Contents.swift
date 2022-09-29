@@ -31,36 +31,44 @@ final class SinglyLinkedList {
     }
 }
 
-/// Ref: https://www.hackerrank.com/challenges/insert-a-node-at-the-tail-of-a-linked-list/problem
-func insertNodeAtTail(head: SinglyLinkedListNode?, data: Int) -> SinglyLinkedListNode {
-    if head == nil {
-        return SinglyLinkedListNode(nodeData: data)
+/// Ref: https://www.hackerrank.com/challenges/print-the-elements-of-a-linked-list-in-reverse/problem
+func reversePrint(llist: SinglyLinkedListNode?) -> Void {
+    if llist == nil {
+        return
     }
-    
-    var lastNode = head!
-    while lastNode.next != nil {
-        lastNode = lastNode.next!
-    }
-    
-    lastNode.next = SinglyLinkedListNode(nodeData: data)
-    
-    return head!
-}
 
+    var result: String = "\(llist!.data)"
+    
+    var currentNode = llist
+    while currentNode?.next != nil {
+        currentNode = currentNode?.next
+        result = "\(currentNode!.data)\n" + result
+    }
+    
+    print(result)
+}
 
 class UserManagerTests: XCTestCase {
     override func setUp() {
         super.setUp()
     }
     
-    func testInsertANodeAtTheTail() {
-        var node = insertNodeAtTail(head: nil, data: 141)
-        insertNodeAtTail(head: node, data: 302)
-        insertNodeAtTail(head: node, data: 164)
-        insertNodeAtTail(head: node, data: 530)
-        insertNodeAtTail(head: node, data: 474)
+    func testReversePrint() {
+        var linkedList = SinglyLinkedList()
+        for num in [20, 6, 2, 19, 7, 4, 15, 9] {
+            linkedList.insertNode(nodeData: num);
+        }
         
-        XCTAssertTrue(node.next?.next?.next?.next?.data == 474)
+        /// expected data
+        /// 9
+        /// 15
+        /// 4
+        /// 7
+        /// 19
+        /// 2
+        /// 6
+        /// 20
+        reversePrint(llist: linkedList.head)
     }
 }
 
