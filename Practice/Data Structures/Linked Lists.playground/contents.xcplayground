@@ -7,5 +7,6 @@
         <page name='Insert a node at a specific position in a linked list'/>
         <page name='Delete a Node'/>
         <page name='Print in reverse'/>
+        <page name='Reverse a linked list'/>
     </pages>
 </playground>
