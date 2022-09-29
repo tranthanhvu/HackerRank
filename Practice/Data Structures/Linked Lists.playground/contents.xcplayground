@@ -5,5 +5,6 @@
         <page name='Insert a Node at the Tail of a Linked List'/>
         <page name='Insert a node at the head of a linked list'/>
         <page name='Insert a node at a specific position in a linked list'/>
+        <page name='Delete a Node'/>
     </pages>
 </playground>
