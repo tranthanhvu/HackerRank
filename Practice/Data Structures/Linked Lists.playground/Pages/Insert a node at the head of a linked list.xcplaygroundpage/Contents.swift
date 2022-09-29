@@ -49,7 +49,7 @@ class UserManagerTests: XCTestCase {
         super.setUp()
     }
     
-    func test1() {
+    func testInsertANodeAtTheHead() {
         var head: SinglyLinkedListNode?
         for num in [383, 484, 392, 975, 321] {
             head = insertNodeAtHead(head: head, data: num)

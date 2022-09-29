@@ -53,7 +53,7 @@ class UserManagerTests: XCTestCase {
         super.setUp()
     }
     
-    func test1() {
+    func testInsertNodeAtTheTail() {
         var node = insertNodeAtTail(head: nil, data: 141)
         insertNodeAtTail(head: node, data: 302)
         insertNodeAtTail(head: node, data: 164)

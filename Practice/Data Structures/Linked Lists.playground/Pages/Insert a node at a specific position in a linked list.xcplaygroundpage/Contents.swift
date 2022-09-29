@@ -58,7 +58,7 @@ class UserManagerTests: XCTestCase {
         super.setUp()
     }
     
-    func test1() {
+    func testInsertANodeAtASpecificPosition() {
         var linkedList = SinglyLinkedList()
         for num in [16, 13, 7] {
             linkedList.insertNode(nodeData: num);

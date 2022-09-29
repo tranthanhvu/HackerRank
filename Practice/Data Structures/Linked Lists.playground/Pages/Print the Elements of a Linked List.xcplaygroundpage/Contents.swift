@@ -47,7 +47,7 @@ class UserManagerTests: XCTestCase {
         super.setUp()
     }
     
-    func test1() {
+    func testPrintList() {
         var linkedList = SinglyLinkedList()
         linkedList.insertNode(nodeData: 16)
         linkedList.insertNode(nodeData: 13)
