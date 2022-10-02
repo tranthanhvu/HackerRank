@@ -8,5 +8,6 @@
         <page name='Delete a Node'/>
         <page name='Print in reverse'/>
         <page name='Reverse a linked list'/>
+        <page name='Compare two linked lists'/>
     </pages>
 </playground>
