@@ -10,5 +10,6 @@
         <page name='Reverse a linked list'/>
         <page name='Compare two linked lists'/>
         <page name='Merge two sorted linked lists'/>
+        <page name='Get node value'/>
     </pages>
 </playground>
