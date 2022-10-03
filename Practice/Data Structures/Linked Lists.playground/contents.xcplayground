@@ -11,5 +11,6 @@
         <page name='Compare two linked lists'/>
         <page name='Merge two sorted linked lists'/>
         <page name='Get node value'/>
+        <page name='Delete duplicate-value nodes from a sorted linked list'/>
     </pages>
 </playground>
