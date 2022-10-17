@@ -14,5 +14,6 @@
         <page name='Delete duplicate-value nodes from a sorted linked list'/>
         <page name='Cycle Detection'/>
         <page name='Find merge point of two lists'/>
+        <page name='Inserting a note into a sorted doubly linked list'/>
     </pages>
 </playground>
