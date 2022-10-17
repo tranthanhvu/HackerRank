@@ -15,5 +15,6 @@
         <page name='Cycle Detection'/>
         <page name='Find merge point of two lists'/>
         <page name='Inserting a note into a sorted doubly linked list'/>
+        <page name='Reverse a doubly linked list'/>
     </pages>
 </playground>
