@@ -53,17 +53,6 @@ class UserManagerTests: XCTestCase {
         super.setUp()
     }
     
-    func base(list: [Int], expected: Int) {
-        let linkedList = SinglyLinkedList()
-        for num in list {
-            linkedList.insertNode(nodeData: num);
-        }
-        
-        let result = has_cycle(llist: linkedList.head)
-        
-        XCTAssertTrue(result == expected)
-    }
-    
     func testCaseBase(input: [Int], expected: [Int]) {
         let testCaseCount = input.first!
         
