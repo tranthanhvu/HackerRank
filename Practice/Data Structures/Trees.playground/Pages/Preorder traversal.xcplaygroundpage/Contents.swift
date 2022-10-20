@@ -28,22 +28,21 @@ class Tree {
     
     // Ref: https://www.hackerrank.com/challenges/tree-preorder-traversal/problem
     func preOrder(root: Node?) -> String {
-        let values = getValues(root: root)
+        if root == nil { return "" }
         
-        let result = values.map({"\($0)"}).joined(separator: " ")
+        var result = "\(root!.data)"
+        
+        let leftBranch = self.preOrder(root: root!.left)
+        if !leftBranch.isEmpty {
+            result += " " + leftBranch
+        }
+        
+        let rightBranch = self.preOrder(root: root!.right)
+        if !rightBranch.isEmpty {
+            result += " " + rightBranch
+        }
         
         return result
-    }
-    
-    func getValues(root: Node?) -> [Int] {
-        if root == nil { return [] }
-        
-        let values = [root!.data]
-        
-        let leftBranch = self.getValues(root: root!.left)
-        let rightBranch = self.getValues(root: root!.right)
-        
-        return values + leftBranch + rightBranch
     }
 }
 
@@ -71,6 +70,7 @@ class UserManagerTests: XCTestCase {
         }
 
         let result = tree.preOrder(root: root)
+
         XCTAssertTrue(result == expected)
     }
     
