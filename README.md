@@ -23,7 +23,7 @@ I tried to make a habit that is to solve the practices in Hackrank every day. Th
   </tr>
   <tr>
     <td>Strings (0/45)</td>
-    <td><a align="center" href="../../tree/master/Practice/Data%20Structures">Trees</a> (1/17)</td>
+    <td><a align="center" href="../../tree/master/Practice/Data%20Structures">Trees</a> (2/17)</td>
     <td>Combinatorics (0/54)</td>
     <td>Repititions (0/5)</td>
   </tr>
