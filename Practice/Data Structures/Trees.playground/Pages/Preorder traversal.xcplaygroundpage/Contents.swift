@@ -1,43 +1,65 @@
 import Foundation
 import XCTest
 
+/// Firstly, let implementing the Node element
 class Node {
+    // its data
     var data: Int
+    
+    // left child linked to a left node
     var left: Node?
+    
+    // right child linked to a right node
     var right: Node?
     
+    // we're going to pass a data to its contruction
     init(d : Int) {
         data  = d
     }
 }
 
+/// Secondly, let implementing the Tree class
 class Tree {
-    func insert(root: Node?, data: Int) -> Node? {
-        if root == nil {
+    /// this is the root node of the tree
+    /// it's not nil because of the problem's contraints ( 1 <= nodes in the tree <= 500)
+    let root: Node
+    
+    // to initial the tree, we're going to pass into it a data to root node
+    init(d: Int) {
+        root = Node(d: d)
+    }
+    
+    /// this function is to insert a new node with its data to a specific node
+    func insert(node: Node?, data: Int) -> Node? {
+        // node is nil when its parent is a leaf
+        // we're going to create a new node in this case
+        if node == nil {
             return Node(d: data)
         }
         
-        if data <= (root?.data)! {
-            root?.left = insert(root: root?.left, data: data)
+        // otherwise, try to insert to left or right branch
+        if data <= node!.data {
+            node!.left = insert(node: node!.left, data: data)
         } else {
-            root?.right = insert(root: root?.right, data: data)
+            node!.right = insert(node: node!.right, data: data)
         }
         
-        return root
+        return node
     }
     
+    
     // Ref: https://www.hackerrank.com/challenges/tree-preorder-traversal/problem
-    func preOrder(root: Node?) -> String {
-        if root == nil { return "" }
+    func preOrder(node: Node?) -> String {
+        if node == nil { return "" }
         
-        var result = "\(root!.data)"
+        var result = "\(node!.data)"
         
-        let leftBranch = self.preOrder(root: root!.left)
+        let leftBranch = self.preOrder(node: node!.left)
         if !leftBranch.isEmpty {
             result += " " + leftBranch
         }
         
-        let rightBranch = self.preOrder(root: root!.right)
+        let rightBranch = self.preOrder(node: node!.right)
         if !rightBranch.isEmpty {
             result += " " + rightBranch
         }
@@ -60,17 +82,16 @@ class UserManagerTests: XCTestCase {
             return result
         }
         
-        var root: Node?
-        let tree = Tree()
-
         let t = readInt()
-
-        for _ in 1...t {
-            root = tree.insert(root: root, data: readInt())
+        let rootData = readInt()
+        let tree = Tree(d: rootData)
+        
+        for _ in 1..<t {
+            tree.insert(node: tree.root, data: readInt())
         }
-
-        let result = tree.preOrder(root: root)
-
+        
+        let result = tree.preOrder(node: tree.root)
+        
         XCTAssertTrue(result == expected)
     }
     
