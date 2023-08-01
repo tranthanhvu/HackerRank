@@ -38,11 +38,31 @@ class Tree {
         return node
     }
     
-    // Ref: https://www.hackerrank.com/challenges/tree-height-of-a-binary-tree/problem
-    func getHeight(root: Node?) -> Int {
-        return (root == nil) ? -1 : 1 + max( getHeight(root: root?.left), getHeight(root: root?.right) );
+    /// Ref:  https://www.hackerrank.com/challenges/tree-inorder-traversal/problem
+    /// Algorithm Inorder
+    /// 1. Traverse the left subtree, call inOrder (left subtree)
+    /// 2 Visit root
+    /// 3. Traverse the right subtree, call inOrder (right subtree)
+    func inOrder(node: Node?) -> String {
+        if node == nil { return "" }
+        
+        var result = ""
+        
+        let leftBranch = self.inOrder(node: node!.left)
+        if !leftBranch.isEmpty {
+            result = result.isEmpty ? leftBranch : "\(result) \(leftBranch)"
+        }
+        
+        result = result.isEmpty ? "\(node!.data)" : "\(result) \(node!.data)"
+        
+        let rightBranch = self.inOrder(node: node!.right)
+        if !rightBranch.isEmpty {
+            result = result.isEmpty ? rightBranch : "\(result) \(rightBranch)"
+        }
+        
+        return result
     }
-} // End of Tree class
+}
 
 
 class UserManagerTests: XCTestCase {
@@ -50,7 +70,7 @@ class UserManagerTests: XCTestCase {
         super.setUp()
     }
     
-    func testCaseBase(input: [Int], expected: Int) {
+    func testCaseBase(input: [Int], expected: String) {
         var currentIndex = 0
         func readInt() -> Int {
             let result = input[currentIndex]
@@ -61,42 +81,28 @@ class UserManagerTests: XCTestCase {
         var root: Node?
         let tree = Tree()
         let t = readInt()
-
+        
         for _ in 0..<t {
-            root = tree.insert(node: root, data: readInt())
+           root = tree.insert(node: root, data: readInt())
         }
 
-        let result = tree.getHeight(root: root)
+        let result = tree.inOrder(node: root)
         print(result)
         XCTAssertTrue(result == expected)
     }
     
     func testCase0() {
         testCaseBase(input: [
-            7,
-            3, 5, 2, 1, 4, 6, 7
-        ], expected: 3)
+            6,
+            1, 2, 5, 3, 6, 4
+        ], expected: "1 2 3 4 5 6")
     }
     
     func testCase1() {
         testCaseBase(input: [
-            7,
-            4, 2, 6, 1, 3, 5, 7
-        ], expected: 2)
-    }
-
-    func testCase2() {
-        testCaseBase(input: [
-            5,
-            3, 1, 7, 5, 4
-        ], expected: 3)
-    }
-    
-    func testCase3() {
-        testCaseBase(input: [
-            1,
-            15
-        ], expected: 0)
+            15,
+            1, 14, 3, 7, 4, 5, 15, 6, 13, 10, 11, 2, 12, 8, 9
+        ], expected: "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15")
     }
 }
 

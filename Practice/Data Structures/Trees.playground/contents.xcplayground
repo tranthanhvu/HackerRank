@@ -4,5 +4,6 @@
         <page name='Preorder traversal'/>
         <page name='Postorder traversal'/>
         <page name='Height of a binary tree'/>
+        <page name='Inorder Traveral'/>
     </pages>
 </playground>
