@@ -48,7 +48,11 @@ class Tree {
     }
     
     
-    // Ref: https://www.hackerrank.com/challenges/tree-preorder-traversal/problem
+    /// Ref: https://www.hackerrank.com/challenges/tree-preorder-traversal/problem
+    /// Algorithm Preorder
+    ///  1. Visit root
+    ///  2.Traverse the left subtree, call preOrder (left subtree)
+    ///  3. Traverse the right subtree, call preOrder (right subtree)
     func preOrder(node: Node?) -> String {
         if node == nil { return "" }
         
