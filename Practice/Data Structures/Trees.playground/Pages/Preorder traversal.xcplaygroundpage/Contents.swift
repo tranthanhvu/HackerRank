@@ -20,15 +20,6 @@ class Node {
 
 /// Secondly, let implementing the Tree class
 class Tree {
-    /// this is the root node of the tree
-    /// it's not nil because of the problem's contraints ( 1 <= nodes in the tree <= 500)
-    let root: Node
-    
-    // to initial the tree, we're going to pass into it a data to root node
-    init(d: Int) {
-        root = Node(d: d)
-    }
-    
     /// this function is to insert a new node with its data to a specific node
     func insert(node: Node?, data: Int) -> Node? {
         // node is nil when its parent is a leaf
@@ -86,15 +77,15 @@ class UserManagerTests: XCTestCase {
             return result
         }
         
+        var root: Node?
+        let tree = Tree()
         let t = readInt()
-        let rootData = readInt()
-        let tree = Tree(d: rootData)
         
-        for _ in 1..<t {
-            tree.insert(node: tree.root, data: readInt())
+        for _ in 0..<t {
+           root = tree.insert(node: root, data: readInt())
         }
         
-        let result = tree.preOrder(node: tree.root)
+        let result = tree.preOrder(node: root)
         print(result)
         XCTAssertTrue(result == expected)
     }

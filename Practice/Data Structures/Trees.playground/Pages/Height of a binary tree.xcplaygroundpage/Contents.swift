@@ -1,31 +1,41 @@
 import Foundation
 import XCTest
 
-// Start of Node class
+/// Firstly, let implementing the Node element
 class Node {
+    // its data
     var data: Int
+    
+    // left child linked to a left node
     var left: Node?
+    
+    // right child linked to a right node
     var right: Node?
     
+    // we're going to pass a data to its contruction
     init(d : Int) {
         data  = d
     }
-} // End of Node class
+}
 
-// Start of Tree class
+/// Secondly, let implementing the Tree class
 class Tree {
-    func insert(root: Node?, data: Int) -> Node? {
-        if root == nil {
+    /// this function is to insert a new node with its data to a specific node
+    func insert(node: Node?, data: Int) -> Node? {
+        // node is nil when its parent is a leaf
+        // we're going to create a new node in this case
+        if node == nil {
             return Node(d: data)
         }
         
-        if data <= (root?.data)! {
-            root?.left = insert(root: root?.left, data: data)
+        // otherwise, try to insert to left or right branch
+        if data <= node!.data {
+            node!.left = insert(node: node!.left, data: data)
         } else {
-            root?.right = insert(root: root?.right, data: data)
+            node!.right = insert(node: node!.right, data: data)
         }
         
-        return root
+        return node
     }
     
     // Ref: https://www.hackerrank.com/challenges/tree-height-of-a-binary-tree/problem
@@ -63,14 +73,14 @@ class UserManagerTests: XCTestCase {
         
         var root: Node?
         let tree = Tree()
-
         let t = readInt()
 
-        for _ in 1...t {
-            root = tree.insert(root: root, data: readInt())
+        for _ in 0..<t {
+            root = tree.insert(node: root, data: readInt())
         }
 
         let result = tree.getHeight(root: root)
+        print(result)
         XCTAssertTrue(result == expected)
     }
     
@@ -87,12 +97,19 @@ class UserManagerTests: XCTestCase {
             4, 2, 6, 1, 3, 5, 7
         ], expected: 2)
     }
-    
+
     func testCase2() {
         testCaseBase(input: [
             5,
             3, 1, 7, 5, 4
         ], expected: 3)
+    }
+    
+    func testCase3() {
+        testCaseBase(input: [
+            1,
+            15
+        ], expected: 0)
     }
 }
 
