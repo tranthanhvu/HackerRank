@@ -95,7 +95,7 @@ class UserManagerTests: XCTestCase {
         }
         
         let result = tree.preOrder(node: tree.root)
-        
+        print(result)
         XCTAssertTrue(result == expected)
     }
     
@@ -104,6 +104,13 @@ class UserManagerTests: XCTestCase {
             6,
             1, 2, 5, 3, 6, 4
         ], expected: "1 2 5 3 4 6")
+    }
+    
+    func testCase1() {
+        testCaseBase(input: [
+            15,
+            1, 14, 3, 7, 4, 5, 15, 6, 13, 10, 11, 2, 12, 8, 9
+        ], expected: "1 14 3 2 7 4 5 6 13 10 8 9 11 12 15")
     }
 }
 

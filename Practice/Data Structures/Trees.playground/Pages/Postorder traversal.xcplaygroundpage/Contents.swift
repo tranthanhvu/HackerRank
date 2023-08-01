@@ -107,7 +107,7 @@ class UserManagerTests: XCTestCase {
         ], expected: "4 3 6 5 2 1")
     }
     
-    func testCase2() {
+    func testCase1() {
         testCaseBase(input: [
             15,
             1, 14, 3, 7, 4, 5, 15, 6, 13, 10, 11, 2, 12, 8, 9,
